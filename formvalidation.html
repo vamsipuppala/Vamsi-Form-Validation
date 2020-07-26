@@ -1,0 +1,78 @@
+<html>
+<head>
+          <title>Validation Form</title>
+          <link rel="stylesheet" type="text/css" href="FormValidationStyle.css">
+</head>
+<body>  
+<script>  
+function validateform()
+{  
+var name=document.myform.field1.value;    
+if (name==null || name=="")
+{  
+  alert("Name can't be blank");  
+  return false;  
+} 
+var id=document.myform.field2.value;
+if(isNaN(id)){
+	alert("Id field should be a number");
+	return false;} 
+else if(id==null || id=="")
+{  
+  alert("id can't be blank");  
+  return false;  
+} 
+var phn=document.myform.field4.value;
+if(isNaN(phn)){
+	alert("Phone number field should be a number");
+	return false; } 
+else if(phn.length!=10)
+{  
+  alert("Phone num field length should be 10");  
+  return false;  
+}
+var em=	document.myform.field3.value;
+if (em==null || em=="")
+{  
+  alert("Email field can't be blank");  
+  return false;  
+} 
+var r=document.myform.field6.value;
+if (r==null || r=="")
+{  
+  alert("Remarks field can't be blank");  
+  return false;  
+}
+if(r.length>25)
+{
+  alert("Remarks field can't be greater than 25");  
+  return false; 
+}
+
+}  
+</script> 
+<center>
+<div class="form-style-3">
+<form name="myform" method="post" action="ab.html"onsubmit="return validateform()" >
+<fieldset><legend><b>STUDENT DETAILS</b></legend>
+<label for="field1"><span>Name <span class="required">*</span></span><input type="text" class="input-field" name="field1"  value="" /></label>
+<label for="field2"><span>College Id<span class="required">*</span></span><input type="text" class="input-field" name="field2"  value="" /></label>
+<label for="field3"><span>Email Address<span class="required">*</span></span><input type="email" class="input-field" name="field3"  value="" /></label>
+<label for="field4"><span>Phone No<span class="required">*</span></span><input type="text" class="input-field" name="field4"  value="" /></label>
+<label for="field5"><span>Department</span><select name="field5" class="select-field">
+<option value="CSE">CSE</option>
+<option value="ECE">ECE</option>
+<option value="ECSC">ECSC</option>
+<option value="EEE">EEE</option>
+<option value="ECM">ECM</option>
+</select></label>
+</fieldset>
+<fieldset><legend><b>REMARKS</b></legend>
+<label for="field6"><span>Remarks <span class="required">*</span></span><textarea name="field6" class="textarea-field"></textarea></label>
+<label><span> </span><input type="submit" value="Submit" /></label>
+</fieldset>
+</form>
+</div>
+</center>
+</body>
+</html
